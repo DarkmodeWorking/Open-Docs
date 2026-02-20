@@ -24,7 +24,7 @@ export default function Page() {
           transition={{ duration: 0.6 }}
         >
           <h1 className='text-5xl font-extrabold tracking-tight bg-clip-text text-[#AA00FF] bg-black'>
-            Histroy of Networks
+            History of Networks
           </h1>
         </motion.header>
 
