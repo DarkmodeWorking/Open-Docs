@@ -5,30 +5,30 @@ const sections = [
   {
     title: '',
     cards: [
-      {
-        title: 'Programming Languages',
-        subtitle: 'Code logic using powerful languages',
-        image: '/docs/languages.jpg',
-        readMoreLink: '/docs/language'
-      },
-      {
-        title: 'Website and Application Development',
-        subtitle: 'Build modern tech applications',
-        image: '/docs/development.webp',
-        readMoreLink: '/docs/development'
-      },
+      // {
+      //   title: 'Programming Languages',
+      //   subtitle: 'Code logic using powerful languages',
+      //   image: '/docs/languages.jpg',
+      //   readMoreLink: '/docs/language'
+      // },
+      // {
+      //   title: 'Website and Application Development',
+      //   subtitle: 'Build modern tech applications',
+      //   image: '/docs/development.webp',
+      //   readMoreLink: '/docs/development'
+      // },
       {
         title: 'Software Tools',
         subtitle: 'Tools enhancing productivity and automation',
         image: '/docs/tools.jpg',
         readMoreLink: '/docs/tools'
       },
-      {
-        title: 'Machine Learning',
-        subtitle: 'Train models with meaningful data',
-        image: '/docs/aiml.webp',
-        readMoreLink: '/docs/aiml'
-      },
+      // {
+      //   title: 'Machine Learning',
+      //   subtitle: 'Train models with meaningful data',
+      //   image: '/docs/aiml.webp',
+      //   readMoreLink: '/docs/aiml'
+      // },
     ],
   },
   // {
