@@ -1,11 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-import NavigationButtons from '@/components/PageChanger'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ChevronRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { CPLUSPLUS_TOPICS } from '@/lib/private/cplusplusTopics'
 
 export default function TopicsLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
@@ -14,12 +14,52 @@ export default function TopicsLayout({ children }: { children: React.ReactNode }
     {
       header: 'Core Concepts',
       topics: [
-        { id: 1, title: 'Introduction' },
-        { id: 2, title: 'History' },
-        { id: 3, title: 'Setup and Environment' },
-        { id: 4, title: 'Hello World' },
-        { id: 5, title: 'Compilation Process' },
-        { id: 6, title: 'Comments' },
+        { slug: 'introduction', title: 'Introduction' },
+        { slug: 'history', title: 'History' },
+        { slug: 'setup-environment', title: 'Setup and Environment' },
+        { slug: 'hello-world', title: 'Hello World' },
+        { slug: 'comments', title: 'Comments' },
+        { slug: 'compilation-process', title: 'Compilation Process' },
+      ],
+    },
+    {
+      header: 'Fundamental Syntax',
+      topics: [
+        { slug: 'input-and-output', title: 'Input and Output' },
+        { slug: 'data-types-and-variables', title: 'Data Types and Variables' },
+        { slug: 'constants-and-literals', title: 'Constants and Literals' },
+        { slug: 'type-casting', title: 'Type Casting' },
+        { slug: 'operators', title: 'Operators' },
+        { slug: 'control-flow', title: 'Control Flow' },
+        { slug: 'loops', title: 'Loops' },
+        { slug: 'exception-handling', title: 'Exception Handling' },
+      ],
+    },
+    {
+      header: 'Functions',
+      topics: [
+        { slug: 'functions', title: 'Functions' },
+        { slug: 'function-overloading', title: 'Function Overloading' },
+        { slug: 'inline-functions', title: 'Inline Functions' },
+        { slug: 'recursion', title: 'Recursion' },
+      ],
+    },
+    {
+      header: 'Memory Management',
+      topics: [
+        { slug: 'functions', title: 'Functions' },
+        { slug: 'function-overloading', title: 'Function Overloading' },
+        { slug: 'inline-functions', title: 'Inline Functions' },
+        { slug: 'recursion', title: 'Recursion' },
+      ],
+    },
+    {
+      header: 'Object Oriented Programming (OOP)',
+      topics: [
+        { slug: 'functions', title: 'Functions' },
+        { slug: 'function-overloading', title: 'Function Overloading' },
+        { slug: 'inline-functions', title: 'Inline Functions' },
+        { slug: 'recursion', title: 'Recursion' },
       ],
     },
   ]
@@ -72,15 +112,16 @@ export default function TopicsLayout({ children }: { children: React.ReactNode }
                       className='overflow-hidden'
                     >
                       <ul className='space-y-1 mt-2'>
-                        {topics.map(({ id, title }) => {
-                          const active = pathname === `/docs/language/cplusplus/${id}`
+                        {topics.map(({ slug, title }) => {
+                          const href = `/docs/language/cplusplus/${slug}`
+                          const active = pathname === href
+
                           return (
-                            <li key={id}>
+                            <li key={slug}>
                               <Link
-                                href={`/docs/language/cplusplus/${id}`}
-                                className={`block px-3 py-2 rounded-lg transition ${
-                                  active ? 'bg-neutral-800' : 'hover:bg-neutral-700'
-                                }`}
+                                href={href}
+                                className={`block px-3 py-2 rounded-lg transition ${active ? 'bg-neutral-800' : 'hover:bg-neutral-700'
+                                  }`}
                               >
                                 {title}
                               </Link>
@@ -99,8 +140,61 @@ export default function TopicsLayout({ children }: { children: React.ReactNode }
 
       <main className='flex-1 bg-black text-white p-0 overflow-y-auto'>
         {children}
-        <NavigationButtons color='#F34B7D' />
+
+        {(() => {
+          const segments = pathname.split('/').filter(Boolean)
+          const currentSlug = segments[segments.length - 1]
+          const basePath = '/' + segments.slice(0, -1).join('/')
+
+          const currentIndex = CPLUSPLUS_TOPICS.indexOf(currentSlug)
+
+          const prevSlug =
+            currentIndex > 0 ? CPLUSPLUS_TOPICS[currentIndex - 1] : null
+
+          const nextSlug =
+            currentIndex >= 0 && currentIndex < CPLUSPLUS_TOPICS.length - 1
+              ? CPLUSPLUS_TOPICS[currentIndex + 1]
+              : null
+
+          return (
+            <motion.div
+              className='flex justify-center gap-6 pt-20'
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              {prevSlug && (
+                <Link href={`${basePath}/${prevSlug}`}>
+                  <button
+                    className='cursor-pointer font-semibold py-2 px-6 rounded-lg transition-all duration-300 shadow-md hover:-translate-x-2'
+                    style={{
+                      backgroundColor: 'transparent',
+                      border: '1px solid #F34B7D',
+                    }}
+                  >
+                    ← View Previous
+                  </button>
+                </Link>
+              )}
+
+              {nextSlug && (
+                <Link href={`${basePath}/${nextSlug}`}>
+                  <button
+                    className='cursor-pointer font-semibold py-2 px-6 rounded-lg transition-all duration-300 shadow-md hover:translate-x-2'
+                    style={{
+                      backgroundColor: 'transparent',
+                      border: '1px solid #F34B7D',
+                    }}
+                  >
+                    View Next →
+                  </button>
+                </Link>
+              )}
+            </motion.div>
+          )
+        })()}
       </main>
+
     </div>
   )
 }
