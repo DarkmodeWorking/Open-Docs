@@ -42,7 +42,7 @@ export function Navbar() {
     { label: "Home", href: "/" },
     { label: "Documentations", href: "/docs" },
     { label: "Code-Vault", href: "/code" },
-    // { label: "Theory", href: "/docs/theory" },
+    { label: "Theory", href: "/theory" },
     { label: "Botla.AI", href: "/bot" },
     { label: "Contribute", href: "/github" },
     // { label: "Jobs", href: "/jobs" },
