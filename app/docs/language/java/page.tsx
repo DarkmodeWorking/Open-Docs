@@ -129,7 +129,7 @@ export default function Page() {
 				&nbsp;Java Docs
 			</h1>
 
-			<p className='text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto text-base md:text-lg'>
+			<p className='text-neutral-300 max-w-2xl mx-auto text-base md:text-lg'>
 				Java is a class-based, object-oriented programming language designed to be platform-independent and secure.
 				<br /><br />
 				Creator: James Gosling <a target='_blank' href='https://github.com/jamesgosling' className='text-neutral-500'>Profile</a>

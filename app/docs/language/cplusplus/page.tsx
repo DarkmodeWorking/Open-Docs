@@ -14,7 +14,6 @@ import {
   IconClock,
   IconBolt,
   IconHierarchy2,
-  IconRefresh,
   IconLink,
   IconSquareRotated,
   IconFileLambda,
@@ -48,11 +47,11 @@ import {
 import { ScrollableFeatureRow } from '@/components/ScrollableRow'
 
 const core = [
-  { title: 'Introduction to C++', description: 'General-purpose, compiled, high-performance programming language.', icon: <IconTerminal2 />, link: 'cplusplus/1' },
-  { title: 'History of C++', description: 'Created by Bjarne Stroustrup as an extension of C.', icon: <IconTimeline />, link: 'cplusplus/2' },
-  { title: 'C++ Standards', description: 'C++98, C++11, C++14, C++17, C++20, C++23.', icon: <IconRefresh />, link: 'cplusplus/3' },
-  { title: 'Setup & Environment', description: 'GCC, Clang, MSVC, IDEs, build tools.', icon: <IconSettings />, link: 'cplusplus/4' },
-  { title: 'Hello World', description: 'First C++ program and compilation process.', icon: <IconFileCode />, link: 'cplusplus/5' },
+  { title: 'Introduction to C++', description: 'General-purpose, compiled, high-performance language.', icon: <IconTerminal2 />, link: 'cplusplus/introduction' },
+  { title: 'History of C++', description: 'Created by Bjarne Stroustrup as an extension of C.', icon: <IconTimeline />, link: 'cplusplus/history' },
+  { title: 'Setup and Environment', description: 'GCC, Clang, MSVC, IDEs, build tools.', icon: <IconSettings />, link: 'cplusplus/setup-environment' },
+  { title: 'Hello World', description: 'First C++ program and compilation process.', icon: <IconFileCode />, link: 'cplusplus/hello-world' },
+  { title: 'Comments', description: '', icon: '', link: 'cplusplus/comments' },
   { title: 'Compilation Process', description: 'Preprocessing, compilation, linking.', icon: <IconCpu />, link: 'cplusplus/6' },
 ]
 
@@ -197,7 +196,7 @@ export default function page() {
         &nbsp;C++ Docs
       </h1>
 
-      <p className='text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto text-base md:text-lg'>
+      <p className='text-neutral-300 max-w-2xl mx-auto text-base md:text-lg'>
         C++ is a high-performance, general-purpose programming language widely used for
         system software, game engines, embedded systems, and competitive programming.
         <br /><br />

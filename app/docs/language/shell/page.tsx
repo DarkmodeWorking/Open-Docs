@@ -102,7 +102,7 @@ export default function Page() {
         <img src="/icons/langs/sh.svg" alt="Shell Logo" className="w-10 h-10" />
         &nbsp;Shell Docs
       </h1>
-      <p className='text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto text-base md:text-lg'>
+      <p className='text-neutral-300 max-w-2xl mx-auto text-base md:text-lg'>
         Shell scripting is a command-line programming language used to automate tasks, manage files, processes, and system administration on Unix/Linux systems.
         <br /><br />
         Creator: Stephen Bourne (Bourne Shell)

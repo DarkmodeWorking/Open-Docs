@@ -61,7 +61,7 @@ double b = a; // int to double`
 int x = (int) d; // double to int`
 
   return (
-    <main className='pt-32 dark:bg-black py-12 px-6'>
+    <main className='pt-32 bg-black py-12 px-6'>
       <div className='max-w-4xl mx-auto space-y-12'>
         <motion.header
           className='text-center'

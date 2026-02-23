@@ -2,72 +2,129 @@
 
 import React, { useState } from 'react';
 import { Code2, Search, Filter, ExternalLink, Trophy, TrendingUp, BookOpen } from 'lucide-react';
+import { useRouter } from "next/navigation";
+
+const problems = [
+  {
+    id: 1,
+    title: "Two Sum (1)",
+    platform: "LeetCode",
+    difficulty: "Easy",
+    tags: ["Array", "Hash Table"],
+    link: "code/leetcode/two-sum"
+  },
+  {
+    id: 33,
+    title: 'Search in Rotated Sorted Array (33)',
+    platform: 'LeetCode',
+    difficulty: 'Medium',
+    tags: ['Array', 'Binary Search'],
+    link: 'code/leetcode/search-in-rotated-sorted-array'
+  },
+  // {
+  //   id: 151,
+  //   title: 'Reverse Words in a String (151)',
+  //   platform: 'LeetCode',
+  //   difficulty: 'Medium',
+  //   tags: ['Two Pointers', 'String'],
+  //   link: 'code/leetcode/reverse-words-in-a-string'
+  // },
+  // {
+  //   id: 238,
+  //   title: 'Product of Array Except Self (238)',
+  //   platform: 'LeetCode',
+  //   difficulty: 'Medium',
+  //   tags: ['Array', 'Prefix Sum'],
+  //   link: 'code/leetcode/product-of-array-except-self'
+  // },
+  // {
+  //   id: 345,
+  //   title: 'Reverse Vowels of a String (345)',
+  //   platform: 'LeetCode',
+  //   difficulty: 'Easy',
+  //   tags: ['Two Pointers', 'String'],
+  //   link: 'code/leetcode/reverse-vowels-of-a-string'
+  // },
+  // {
+  //   id: 605,
+  //   title: 'Can Place Flowers (605)',
+  //   platform: 'LeetCode',
+  //   difficulty: 'Easy',
+  //   tags: ['Array', 'Greedy'],
+  //   link: 'code/leetcode/can-place-flowers'
+  // },
+  // {
+  //   id: 1071,
+  //   title: 'Greatest Common Divisor of Strings (1071)',
+  //   platform: 'LeetCode',
+  //   difficulty: 'Easy',
+  //   tags: ['Math', 'String'],
+  //   link: 'code/leetcode/greatest-common-divisor-of-strings'
+  // },
+  // {
+  //   id: 1431,
+  //   title: 'Kids With the Greatest Number of Candies (1431)',
+  //   platform: 'LeetCode',
+  //   difficulty: 'Easy',
+  //   tags: ['Array'],
+  //   link: 'code/leetcode/kids-with-the-greatest-number-of-candies'
+  // },
+  // {
+  //   id: 1768,
+  //   title: 'Merge Strings Alternatively (1768)',
+  //   platform: 'LeetCode',
+  //   difficulty: 'Easy',
+  //   tags: ['Two Pointers', 'String'],
+  //   link: 'code/leetcode/merge-strings-alternatively'
+  // },
+  {
+    id: 10001,
+    title: 'Welcome to Java!',
+    platform: 'HackerRank',
+    difficulty: 'Easy',
+    tags: [],
+    link: 'code/hackerrank/java/welcome-to-java'
+  },
+  {
+    id: 10002,
+    title: 'Java Stdin and Stdout I',
+    platform: 'HackerRank',
+    difficulty: 'Easy',
+    tags: [],
+    link: 'code/hackerrank/java/java-stdin-and-stdout-1'
+  },
+  {
+    id: 10009,
+    title: 'Java Regex',
+    platform: 'HackerRank',
+    difficulty: 'Medium',
+    tags: [],
+    link: 'code/hackerrank/java/java-regex'
+  },
+  {
+    id: 10078,
+    title: 'Java Priority Queue',
+    platform: 'HackerRank',
+    difficulty: 'Medium',
+    tags: [],
+    link: 'code/hackerrank/java/java-priority-queue'
+  },
+];
 
 const CodeVault = () => {
   const [selectedPlatform, setSelectedPlatform] = useState('all');
   const [selectedDifficulty, setSelectedDifficulty] = useState('all');
   const [searchQuery, setSearchQuery] = useState('')
 
-  const problems = [
-    {
-      id: 1,
-      title: "Two Sum",
-      platform: "LeetCode",
-      difficulty: "Easy",
-      tags: ["Array", "Hash Table"],
-      link: "code/leetcode/two-sum"
-    },
-    {
-      id: 33,
-      title: 'Search in Rotated Sorted Array',
-      platform: 'LeetCode',
-      difficulty: 'Medium',
-      tags: ['Array', 'Binary Search'],
-      link: 'code/leetcode/search-in-rotated-sorted-array'
-    },
-    {
-      id: 10001,
-      title: 'Welcome to Java!',
-      platform: 'HackerRank',
-      difficulty: 'Easy',
-      tags: [],
-      link: 'code/hackerrank/java/welcome-to-java'
-    },
-    {
-      id: 10002,
-      title: 'Java Stdin and Stdout I',
-      platform: 'HackerRank',
-      difficulty: 'Easy',
-      tags: [],
-      link: 'code/hackerrank/java/java-stdin-and-stdout-1'
-    },
-    {
-      id: 10009,
-      title: 'Java Regex',
-      platform: 'HackerRank',
-      difficulty: 'Medium',
-      tags: [],
-      link: 'code/hackerrank/java/java-regex'
-    },
-    {
-      id: 10078,
-      title: 'Java Priority Queue',
-      platform: 'HackerRank',
-      difficulty: 'Medium',
-      tags: [],
-      link: 'code/hackerrank/java/java-priority-queue'
-    },
-  ];
+  const router = useRouter();
 
   const filteredProblems = problems.filter(problem => {
     const matchesPlatform = selectedPlatform === 'all' || problem.platform === selectedPlatform;
     const matchesDifficulty = selectedDifficulty === 'all' || problem.difficulty === selectedDifficulty;
     const matchesSearch = problem.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          problem.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+      problem.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
     return matchesPlatform && matchesDifficulty && matchesSearch;
   });
-
-
 
   interface Stats {
     total: number;
@@ -77,7 +134,7 @@ const CodeVault = () => {
   }
 
   const getDifficultyColor = (difficulty: string): string => {
-    switch(difficulty) {
+    switch (difficulty) {
       case 'Easy': return 'text-green-400 bg-green-400/10 border-green-400/20';
       case 'Medium': return 'text-yellow-400 bg-yellow-400/10 border-yellow-400/20';
       case 'Hard': return 'text-red-400 bg-red-400/10 border-red-400/20';
@@ -196,7 +253,7 @@ const CodeVault = () => {
         </div>
 
         {/* Problems List */}
-        <div className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProblems.length === 0 ? (
             <div className="bg-gray-900 rounded-xl p-12 border border-gray-800 text-center">
               <BookOpen className="w-12 h-12 text-gray-600 mx-auto mb-4" />
@@ -204,30 +261,48 @@ const CodeVault = () => {
             </div>
           ) : (
             filteredProblems.map((problem) => (
-              <div key={problem.id} className="bg-gray-900 rounded-xl border border-gray-800 overflow-hidden hover:border-cyan-500/50 transition-colors">
-                {/* Problem Header */}
-                <div className="p-6 border-b border-gray-800">
+              <div
+                key={problem.id}
+                onClick={() => window.location.href = problem.link}
+                className="cursor-pointer bg-gray-900 rounded-xl border border-gray-800 overflow-hidden hover:border-cyan-500/50 transition-colors hover:scale-[1.01]"
+              >
+                <div className="p-6">
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-gray-100 mb-2">{problem.title}</h3>
+                      <h3 className="text-lg font-semibold text-gray-100 mb-2">
+                        {problem.title}
+                      </h3>
+
                       <div className="flex flex-wrap items-center gap-3">
                         <span className="px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-xs font-medium border border-cyan-500/20">
                           {problem.platform}
                         </span>
-                        <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getDifficultyColor(problem.difficulty)}`}>
+
+                        <span
+                          className={`px-3 py-1 rounded-full text-xs font-medium border ${getDifficultyColor(
+                            problem.difficulty
+                          )}`}
+                        >
                           {problem.difficulty}
                         </span>
+
                         {problem.tags.map((tag, idx) => (
-                          <span key={idx} className="px-3 py-1 bg-gray-800 text-gray-400 rounded-full text-xs border border-gray-700">
+                          <span
+                            key={idx}
+                            className="px-3 py-1 bg-gray-800 text-gray-400 rounded-full text-xs border border-gray-700"
+                          >
                             {tag}
                           </span>
                         ))}
                       </div>
                     </div>
+
+                    {/* External Link (New Tab) */}
                     <a
                       href={problem.link}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
                       className="ml-4 p-2 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors border border-gray-700"
                     >
                       <ExternalLink className="w-5 h-5 text-cyan-400" />
@@ -236,6 +311,7 @@ const CodeVault = () => {
                 </div>
               </div>
             ))
+
           )}
         </div>
       </div>

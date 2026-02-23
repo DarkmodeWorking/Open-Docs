@@ -31,7 +31,7 @@ const Footer = () => {
 
         <button
           onClick={() => setTheme("dark")}
-          className="dark:bg-black ml-3 rounded-full p-2 text-black dark:text-white"
+          className="bg-black ml-3 rounded-full p-2 text-black dark:text-white"
         >
           <DIcons.Moon className="h-5 w-5" strokeWidth={1} />
           <span className="sr-only">T</span>

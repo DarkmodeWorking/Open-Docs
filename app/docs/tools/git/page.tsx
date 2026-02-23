@@ -85,7 +85,7 @@ export default function page() {
         <img src="/icons/tools/git.svg" alt="Git Logo" className="w-10 h-10" />
         Git Docs
       </h1>
-      <p className='text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto text-base md:text-lg'>
+      <p className='text-neutral-300 max-w-2xl mx-auto text-base md:text-lg'>
         Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
         <br /><br />
         Creator: Linus Torvalds <a target='_blank' href='https://github.com/torvalds' className='text-neutral-500'>Profile</a>

@@ -143,7 +143,7 @@ export default function page() {
 				<img src="/icons/langs/js.svg" alt="JavaScript Logo" className="w-10 h-10" />
 				&nbsp;JavaScript Docs
 			</h1>
-			<p className='text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto text-base md:text-lg'>
+			<p className='text-neutral-300 max-w-2xl mx-auto text-base md:text-lg'>
 				JavaScript is a high-level, versatile scripting language primarily used to create interactive effects within web browsers.
 				<br /><br />
 				Creator: Brendan Eich <a target='_blank' href='https://github.com/BrendanEich' className='text-neutral-500'>Profile</a>

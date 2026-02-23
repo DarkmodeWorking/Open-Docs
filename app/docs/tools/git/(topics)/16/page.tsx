@@ -42,7 +42,7 @@ bugfix/ISSUE-45-fix-crash`
 bugfix/JIRA-222-fix-checkout-error`
 
   return (
-    <main className='pt-32 dark:bg-black py-12 px-6'>
+    <main className='pt-32 bg-black py-12 px-6'>
       <div className='max-w-4xl mx-auto space-y-12'>
         <motion.header
           className='text-center'
