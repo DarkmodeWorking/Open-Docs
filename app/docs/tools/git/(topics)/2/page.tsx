@@ -22,7 +22,7 @@ sudo apt install git`
 
   return (
     // <main className='min-h-screen bg-gradient-to-b from-white to-gray-100 dark:from-black dark:to-slate-900 py-12 px-6'>
-    <main className='pt-32  dark:bg-black  py-12 px-6'>
+    <main className='pt-32  bg-black  py-12 px-6'>
       <div className='max-w-4xl mx-auto space-y-12'>
         <motion.header
           className='text-center'
