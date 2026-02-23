@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Code2, Search, Filter, ExternalLink, Trophy, TrendingUp, BookOpen } from 'lucide-react';
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
 const problems = [
   {
@@ -116,7 +116,7 @@ const CodeVault = () => {
   const [selectedDifficulty, setSelectedDifficulty] = useState('all');
   const [searchQuery, setSearchQuery] = useState('')
 
-  const router = useRouter();
+  // const router = useRouter();
 
   const filteredProblems = problems.filter(problem => {
     const matchesPlatform = selectedPlatform === 'all' || problem.platform === selectedPlatform;
