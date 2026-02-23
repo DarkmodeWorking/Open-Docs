@@ -128,7 +128,7 @@ export default function Page() {
         <img src="/icons/langs/py.svg" alt="Python Logo" className="w-10 h-10" />
         &nbsp;Python Docs
       </h1>
-      <p className='text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto text-base md:text-lg'>
+      <p className='text-neutral-300 max-w-2xl mx-auto text-base md:text-lg'>
     Python is a high-level, interpreted programming language known for its readability, simplicity, and wide range of applications including web development, data science, and automation.
     <br /><br />
     Creator: Guido van Rossum <a target='_blank' href='https://github.com/gvanrossum' className='text-neutral-500'>Profile</a>

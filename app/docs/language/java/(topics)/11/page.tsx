@@ -63,7 +63,7 @@ for (int i = 1; i <= 3; i++) {
 }`
 
   return (
-    <main className='pt-32 dark:bg-black py-12 px-6'>
+    <main className='pt-32 bg-black py-12 px-6'>
       <div className='max-w-4xl mx-auto space-y-12'>
         <motion.header
           className='text-center'

@@ -79,7 +79,7 @@ export default function page() {
 				<img src="/icons/langs/html.svg" alt="HTML Logo" className="w-10 h-10" />
 				&nbsp;HTML Docs
 			</h1>
-			<p className='text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto text-base md:text-lg'>
+			<p className='text-neutral-300 max-w-2xl mx-auto text-base md:text-lg'>
 				HTML (HyperText Markup Language) is the standard markup language used to create and structure content on the web.
 				<br /><br />
 				Creator: Tim Berners-Lee <a target='_blank' href='https://github.com/timbl' className='text-neutral-500'>Profile</a>

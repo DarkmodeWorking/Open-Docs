@@ -66,7 +66,7 @@ export default function page() {
 				<img src="/icons/langs/css.svg" alt="CSS Logo" className="w-10 h-10" />
 				&nbsp;CSS Docs
 			</h1>
-			<p className='text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto text-base md:text-lg'>
+			<p className='text-neutral-300 max-w-2xl mx-auto text-base md:text-lg'>
 				CSS (Cascading Style Sheets) is a style sheet language used to describe the presentation of HTML documents.
 				<br /><br />
 				Creator: Håkon Wium Lie <a target='_blank' href='https://github.com/' className='text-neutral-500'>Profile</a>

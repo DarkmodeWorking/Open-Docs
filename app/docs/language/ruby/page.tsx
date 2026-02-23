@@ -115,7 +115,7 @@ export default function Page() {
 				&nbsp;Ruby Docs
 			</h1>
 
-			<p className='text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto text-base md:text-lg'>
+			<p className='text-neutral-300 max-w-2xl mx-auto text-base md:text-lg'>
 				Ruby is a dynamic, open-source programming language focused on simplicity and productivity. Its elegant syntax makes it natural to read and easy to write.
 				<br /><br />
 				Creator: Yukihiro Matsumoto (<a target='_blank' href='https://github.com/matz' className='text-neutral-500'>@matz</a>)
